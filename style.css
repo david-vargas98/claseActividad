@@ -1,0 +1,133 @@
+/* Título: Práctica de HTML5 y CSS - Alumno: Edgar David Vargas Fuentes - Sección: D13 - Asignatura: Programación para internet */
+/* ESTILOS AL index.html */
+/* Estilo al encabezado Edgar David Vargas Fuentes */
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+h1, h2, p, li, tr{
+    font-family: sans-serif;
+}
+/* Estilo a las secciones */
+section{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color:bisque;
+}
+
+/* Estilo a la tabla de proyectos */
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Estilo a las celdas */
+th, td{
+    border: 1px solid;
+    padding: 10px;
+}
+/* Estilos a los enlaces de navegación */
+.nav{
+    margin-left: 20px;
+}
+.nav a{
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color:bisque;
+    font-family:sans-serif;
+    font-size: small;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.6s ease;
+    text-shadow: 1px 1px 0px rgba(51, 51, 51, 0.5), -1px -1px 0px rgba(51, 51, 51, 0.5), 1px -1px 0px rgba(51, 51, 51, 0.5), -1px 1px 0px rgba(51, 51, 51, 0.5);
+}
+.nav a:hover{
+    color: #ccc;
+    text-shadow: none;
+}
+/* Estilo de la imagen */
+#persona-admiro{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.persona-info{
+    flex: 1;
+    padding-right: 20px;
+    margin-bottom: 300px;
+}
+.persona-imagen img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+/* ESTILOS AL formulario.html */
+/* Estilos al form */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color:bisque;
+}
+/* Estilos a los inputs y textarea */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: sans-serif;
+}
+/* Estilos para los Radio Buttons */
+#genero{
+    display: flex;
+    align-items: center;
+}
+input[type="radio"]{
+    margin: 3px;
+    cursor: pointer;
+}
+/* Estilos para el select */
+select{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+/* Estilos para el botón */
+button{
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Hoover al pasar el mouse */
+button:hover{
+    background-color: #555;
+}
+/* Estilos para los label */
+label{
+    font-family: sans-serif;
+    font-size:medium;
+    font-weight: 600;
+}
+/* Letra cursiva */
+.cursiva{
+    font-style: italic;
+}
