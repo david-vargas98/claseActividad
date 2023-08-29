@@ -56,4 +56,17 @@
         <a href="clase.html">Clase BootStrap</a>
     </div>
 </body>
+<?php
+	echo "<h2> Hola mundo usando PHP </h2>";
+	
+	if(!empty($_POST['nombrePersona']) && !empty($_POST['correo']))
+	{
+	  echo "El nombre es: ". $_POST['nombrePersona']. "<br>";
+	  echo "El correo es: ". $_POST['correo']. "<br>";
+	}
+	else
+	{
+	  echo "<h3>Faltan datos, may</h3>";
+	}
+?>
 </html>
