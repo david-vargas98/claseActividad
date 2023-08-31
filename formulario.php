@@ -12,7 +12,7 @@
         <h1>Contacto</h1>
     </header>
     <main> <!-- Contenido principal-->
-        <form action="" method="get"> <!-- action se puede dejar en blanco o pasar el nombre del mismo archivo-->
+        <form action="" method="post"> <!-- action se puede dejar en blanco o pasar el nombre del mismo archivo-->
             <label for="nombrePersona">Nombre:</label> <!-- for debe coincidir con id del input-->
             <input type="text" name="nombrePersona" id="nombrePersona" placeholder="Nombre completo" required> <br>
 
@@ -55,18 +55,18 @@
         <a href="formulario.html">Formulario.html</a>
         <a href="clase.html">Clase BootStrap</a>
     </div>
+    <?php
+	    echo "<h2> Hola mundo usando PHP </h2>";
+    
+	    if(!empty($_POST['nombrePersona']) && !empty($_POST['correo']))
+	    {
+	      echo "El nombre es: ". $_POST['nombrePersona']. "<br>";
+	      echo "El correo es: ". $_POST['correo']. "<br>";
+	    }
+	    else
+	    {
+	      echo "<h3>Faltan datos, may</h3>";
+	    }
+    ?>
 </body>
-<?php
-	echo "<h2> Hola mundo usando PHP </h2>";
-	
-	if(!empty($_POST['nombrePersona']) && !empty($_POST['correo']))
-	{
-	  echo "El nombre es: ". $_POST['nombrePersona']. "<br>";
-	  echo "El correo es: ". $_POST['correo']. "<br>";
-	}
-	else
-	{
-	  echo "<h3>Faltan datos, may</h3>";
-	}
-?>
 </html>
