@@ -56,23 +56,31 @@
         <a href="clase.html">Clase BootStrap</a>
     </div>
     <?php
-        require('conexion.php');
+        require 'conexion.php';
 	    echo "<h2> Hola mundo usando PHP </h2>";
     
 	    if(!empty($_POST['nombrePersona']) && !empty($_POST['correo']))
 	    {
 	      echo "El nombre es: ". $_POST['nombrePersona']. "<br>";
 	      echo "El correo es: ". $_POST['correo']. "<br>";
+           //Inserción de datos
+            $nombre = $_POST['nombrePersona'];
+            $correo = $_POST['correo'];
+            $insert = "INSERT INTO formulariophp(nombre, correo) VALUES ('$nombre', '$correo')";
+            #Validación
+            if(mysqli_query($enlace, $insert))
+            {
+                echo "Registro insertado con éxito!";
+            }
+            else
+            {
+                echo "Error al insertar el registro: ". mysqli_error($enlace);
+            }
 	    }
 	    else
 	    {
 	      echo "<h3>Faltan datos, may</h3>";
 	    }
-
-        //Inserción de datos
-        $insert = "INSERT INTO formulariophp(nombre, correo) VALUES '$_REQUEST[nombrePersona]', '$_REQUEST[correo]'";
-        #Se usa exec() que toma una consulta SQL como argumento y la ejecuta en la base de datos.
-        $conexion->exec($insert) 
     ?>
 </body>
 </html>
