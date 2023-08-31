@@ -56,6 +56,7 @@
         <a href="clase.html">Clase BootStrap</a>
     </div>
     <?php
+        require('conexion.php');
 	    echo "<h2> Hola mundo usando PHP </h2>";
     
 	    if(!empty($_POST['nombrePersona']) && !empty($_POST['correo']))
@@ -67,6 +68,11 @@
 	    {
 	      echo "<h3>Faltan datos, may</h3>";
 	    }
+
+        //Inserción de datos
+        $insert = "INSERT INTO formulariophp(nombre, correo) VALUES '$_REQUEST[nombrePersona]', '$_REQUEST[correo]'";
+        #Se usa exec() que toma una consulta SQL como argumento y la ejecuta en la base de datos.
+        $conexion->exec($insert) 
     ?>
 </body>
 </html>
