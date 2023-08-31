@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario.html</title> <!-- Título para mostrar en pestaña/ventana de navegador -->
     <link rel="stylesheet" href="style.css"> <!-- Archivo de css a utilizar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
     <header> <!-- Encabezado principal-->
@@ -76,11 +77,35 @@
             {
                 echo "Error al insertar el registro: ". mysqli_error($enlace);
             }
+            //Consulta de datos
+            $consulta = "SELECT * FROM formulariophp";
+            #Consulta SQL que selecciona todos los registros de la tabla formulariophp.
+            $resultado = mysqli_query($enlace, $consulta);
+            #Validación, verifica si la consulta se ejecutó correctamente
+            if($resultado)
+            {
+                echo "<ul>";
+                #obtiene la siguiente fila de resultados como un arreglo asociativo. Cada llamada a esta función mueve el puntero de resultados hacia la siguiente fila.
+                echo "ID - Nombre - Correo";
+                while($fila = mysqli_fetch_assoc($resultado))
+                {
+                    #fila contiene los datos de la fila o bien, tupla actual
+                    echo "<li>".$fila['id']."-".$fila['nombre']."-".$fila['correo']."<li>";
+                }
+                echo "</ul>";
+            }
+            else
+            {
+                echo "Error al ejecutar la consulta: ".mysqli_error($enlace);
+            }
+            #Cierre de conexión a la base de datos
+            mysqli_close($enlace);
 	    }
 	    else
 	    {
 	      echo "<h3>Faltan datos, may</h3>";
 	    }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
